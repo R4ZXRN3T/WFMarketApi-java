@@ -36,7 +36,7 @@ public class Item extends ItemShort {
 	}
 
 	public Item(String id, String slug, String gameRef, String[] tags, Localization i18n, String[] subtypes, Integer maxRank, Integer maxCharges, Boolean vaulted, Integer ducats, Integer amberStars, Integer cyanStars, Integer baseEndo, Float endoMultiplier, Boolean setRoot, String[] setParts, Integer quantityInSet, String rarity, Boolean bulkTradable, Integer maxAmberStars, Integer maxCyanStars, Integer vosfor, Integer reqMasteryRank, Integer tradingTax, Boolean tradable) {
-		super(id, slug, gameRef, tags, i18n, subtypes, maxRank, maxCharges, vaulted, ducats, amberStars, cyanStars, baseEndo, endoMultiplier);
+		super(id, slug, gameRef, tags, i18n, maxRank, maxCharges, vaulted, ducats, amberStars, cyanStars, baseEndo, endoMultiplier, subtypes);
 		this.setRoot = setRoot;
 		this.setParts = setParts;
 		this.quantityInSet = quantityInSet;

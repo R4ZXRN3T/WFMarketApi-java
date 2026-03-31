@@ -44,7 +44,7 @@ public class ItemShort extends DataModel {
 	/**
 	 * All-args constructor. Assigns provided values to all fields.
 	 */
-	public ItemShort(String id, String slug, String gameRef, String[] tags, Localization i18n, String[] subtypes, Integer maxRank, Integer maxCharges, Boolean vaulted, Integer ducats, Integer amberStars, Integer cyanStars, Integer baseEndo, Float endoMultiplier) {
+	public ItemShort(String id, String slug, String gameRef, String[] tags, Localization i18n, Integer maxRank, Integer maxCharges, Boolean vaulted, Integer ducats, Integer amberStars, Integer cyanStars, Integer baseEndo, Float endoMultiplier, String[] subtypes) {
 		this.id = id;
 		this.slug = slug;
 		this.gameRef = gameRef;

@@ -97,6 +97,18 @@ public class Localization {
 			this.value = value;
 		}
 
+		/**
+		 * Map a language code (e.g. "en", "de", "fr") to the enum constant.
+		 * Returns null when no matching language exists.
+		 */
+		public static Language fromCode(String code) {
+			if (code == null) return null;
+			for (Language l : values()) {
+				if (l.value.equals(code)) return l;
+			}
+			return null;
+		}
+
 		@Override
 		public String toString() {
 			return value;

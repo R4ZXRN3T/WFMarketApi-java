@@ -22,8 +22,44 @@ dependencies {
 	testImplementation platform('org.junit:junit-bom:5.10.0')
 	testImplementation 'org.junit.jupiter:junit-jupiter'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'org.json:json:20251224'
 }
 
 test {
 	useJUnitPlatform()
+}
+
+// Place the produced jar into the project root directory
+// and set a predictable archive filename.
+jar {
+	archiveFileName.set("${project.name}-${version}.jar")
+	destinationDirectory.set(project.layout.projectDirectory)
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	manifest {
+		attributes 'Main-Class': 'org.R4ZXRN3T.wfmarketapi.Main'
+	}
+	// Include compiled classes from this project
+	from(sourceSets.main.output)
+	// Unpack and include runtime dependencies
+	from {
+		configurations.runtimeClasspath.collect { dependency ->
+			dependency.isDirectory() ? dependency : zipTree(dependency)
+		}
+	}
+}
+
+// Create an executable "fat" jar that includes runtime dependencies.
+// This is convenient for running the jar with `java -jar` without needing
+// to manage external classpath entries. The produced file will be
+// <project>-<version>-all.jar and written to the project root.
+tasks.register('jar-nodeps', Jar) {
+	// Filename like: <project-name>-<version>.jar
+	archiveFileName.set("${project.name}-${version}-nodeps.jar")
+	// Write the jar into the project root directory instead of build/libs
+	destinationDirectory.set(project.layout.projectDirectory)
+	// Mark the main class so the jar can be run with `java -jar`
+	from(sourceSets.main.output)
+	manifest {
+		attributes 'Main-Class': 'org.R4ZXRN3T.wfmarketapi.Main'
+	}
 }
