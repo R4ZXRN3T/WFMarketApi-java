@@ -52,6 +52,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns whether this item is the root of a set.
+	 *
 	 * @return true if set root, false otherwise or null
 	 */
 	public Boolean getSetRoot() {
@@ -60,6 +61,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets whether this item is the root of a set.
+	 *
 	 * @param setRoot boolean flag
 	 */
 	public void setSetRoot(Boolean setRoot) {
@@ -68,6 +70,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns the parts that compose the set, if any.
+	 *
 	 * @return array of set part ids or null
 	 */
 	public String[] getSetParts() {
@@ -76,6 +79,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the parts that compose the set.
+	 *
 	 * @param setParts array of set part ids
 	 */
 	public void setSetParts(String[] setParts) {
@@ -84,6 +88,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns quantity in a set, if applicable.
+	 *
 	 * @return quantity in set or null
 	 */
 	public Integer getQuantityInSet() {
@@ -92,6 +97,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the quantity in a set for this item.
+	 *
 	 * @param quantityInSet quantity value
 	 */
 	public void setQuantityInSet(Integer quantityInSet) {
@@ -100,6 +106,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns the rarity string for the item.
+	 *
 	 * @return rarity or null
 	 */
 	public String getRarity() {
@@ -108,6 +115,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the rarity string for the item.
+	 *
 	 * @param rarity rarity value
 	 */
 	public void setRarity(String rarity) {
@@ -116,6 +124,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns whether the item is bulk tradable.
+	 *
 	 * @return bulkTradable flag or null
 	 */
 	public Boolean getBulkTradable() {
@@ -124,6 +133,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the bulk tradable flag for the item.
+	 *
 	 * @param bulkTradable boolean flag
 	 */
 	public void setBulkTradable(Boolean bulkTradable) {
@@ -132,6 +142,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns the maximum amber stars available for this item.
+	 *
 	 * @return amber stars or null
 	 */
 	public Integer getMaxAmberStars() {
@@ -140,6 +151,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the maximum amber stars for this item.
+	 *
 	 * @param maxAmberStars amber stars count
 	 */
 	public void setMaxAmberStars(Integer maxAmberStars) {
@@ -148,6 +160,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns the maximum cyan stars available for this item.
+	 *
 	 * @return cyan stars or null
 	 */
 	public Integer getMaxCyanStars() {
@@ -156,6 +169,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the maximum cyan stars for this item.
+	 *
 	 * @param maxCyanStars cyan stars count
 	 */
 	public void setMaxCyanStars(Integer maxCyanStars) {
@@ -164,6 +178,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns vosfor (in-game currency) value for this item.
+	 *
 	 * @return vosfor or null
 	 */
 	public Integer getVosfor() {
@@ -172,6 +187,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the vosfor value for this item.
+	 *
 	 * @param vosfor vosfor amount
 	 */
 	public void setVosfor(Integer vosfor) {
@@ -180,6 +196,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns required mastery rank for the item.
+	 *
 	 * @return mastery rank or null
 	 */
 	public Integer getReqMasteryRank() {
@@ -188,6 +205,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the required mastery rank.
+	 *
 	 * @param reqMasteryRank mastery rank
 	 */
 	public void setReqMasteryRank(Integer reqMasteryRank) {
@@ -196,6 +214,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns the trading tax applied to trades of this item.
+	 *
 	 * @return trading tax or null
 	 */
 	public Integer getTradingTax() {
@@ -204,6 +223,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets the trading tax for this item.
+	 *
 	 * @param tradingTax tax amount
 	 */
 	public void setTradingTax(Integer tradingTax) {
@@ -212,6 +232,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Returns whether the item is tradable.
+	 *
 	 * @return tradable flag or null
 	 */
 	public Boolean getTradable() {
@@ -220,6 +241,7 @@ public class Item extends ItemShort {
 
 	/**
 	 * Sets whether the item is tradable.
+	 *
 	 * @param tradable boolean flag
 	 */
 	public void setTradable(Boolean tradable) {

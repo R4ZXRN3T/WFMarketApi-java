@@ -2,8 +2,10 @@
 
 # Description
 
-All **structs** are Golang structs with JSON tags (see [How to Use Struct Tags in Go](https://www.digitalocean.com/community/tutorials/how-to-use-struct-tags-in-go)).
-If you are familiar with them and their quirks, you will likely be able to deduce the data types and identify which fields could be optional.
+All **structs** are Golang structs with JSON tags (
+see [How to Use Struct Tags in Go](https://www.digitalocean.com/community/tutorials/how-to-use-struct-tags-in-go)).
+If you are familiar with them and their quirks, you will likely be able to deduce the data types and identify which
+fields could be optional.
 However, just to be sure and to facilitate easier reading, I’ll highlight these fields with a color.
 
 - **`Field is optional`**
@@ -21,8 +23,7 @@ However, just to be sure and to facilitate easier reading, I’ll highlight thes
 Represent trimmed Item model, only used to build initial local copy of tradable items list on a client.
 
 - **Golang Struct**
-    
-    
+
     ```go
     type ItemJson struct {
     	Id             string                   `json:"id"`
@@ -59,7 +60,6 @@ Represent trimmed Item model, only used to build initial local copy of tradable 
     	SubIcon     string `json:"subIcon,omitempty"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -101,8 +101,7 @@ depends on your **Language** header, you could have any other language inside `i
 Full item model with all possible fields
 
 - **Golang Struct**
-    
-    
+
     ```go
     type ItemJson struct {
     	Id             string                   `json:"id"`
@@ -139,7 +138,6 @@ Full item model with all possible fields
     	SubIcon     string `json:"subIcon,omitempty"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -192,7 +190,7 @@ Full item model with all possible fields
 Full riven weapon model with all possible fields
 
 - **Golang Struct**
-    
+
     ```go
     type Riven struct {
     	Id             string                    `json:"id"`
@@ -212,9 +210,9 @@ Full riven weapon model with all possible fields
     	Thumb    string `json:"thumb"`
     }
     ```
-    
 
-**`rivenType`** could be **** `kitgun` | `melee` | `pistol` | `rifle` | `shotgun` | `zaw`, but a new one may be added at any time.
+**`rivenType`** could be **** `kitgun` | `melee` | `pistol` | `rifle` | `shotgun` | `zaw`, but a new one may be added at
+any time.
 
 **`group`** used to break riven by groups on the frontend, used for rendering only
 
@@ -247,7 +245,7 @@ Full riven weapon model with all possible fields
 Full riven attribute model with all possible fields
 
 - **Golang Struct**
-    
+
     ```go
     type RivenAttribute struct {
     	Id                 string                             `json:"id"`
@@ -270,7 +268,6 @@ Full riven attribute model with all possible fields
     	Thumb  string `json:"thumb"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -307,7 +304,7 @@ Full riven attribute model with all possible fields
 ## Lich weapon
 
 - **Golang Struct**
-    
+
     ```go
     type LichWeapon struct {
     	Id             string                         `json:"id"`
@@ -324,7 +321,6 @@ Full riven attribute model with all possible fields
     	Thumb    string `json:"thumb"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -350,7 +346,7 @@ Full riven attribute model with all possible fields
 ## Lich ephemera
 
 - **Golang Struct**
-    
+
     ```go
     type LichEphemera struct {
     	Id        string                           `json:"id"`
@@ -367,7 +363,6 @@ Full riven attribute model with all possible fields
     	Thumb string `json:"thumb"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -393,7 +388,7 @@ Full riven attribute model with all possible fields
 ## Lich quirk
 
 - **Golang Struct**
-    
+
     ```go
     type LichQuirk struct {
     	Id      string                        `json:"id"`
@@ -410,7 +405,6 @@ Full riven attribute model with all possible fields
     }
     
     ```
-    
 
 **JSON Example**
 
@@ -433,7 +427,7 @@ Full riven attribute model with all possible fields
 ## Sister weapon
 
 - **Golang Struct**
-    
+
     ```go
     type SisterWeapon struct {
     	Id             string                         `json:"id"`
@@ -450,7 +444,6 @@ Full riven attribute model with all possible fields
     	Thumb    string `json:"thumb"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -476,7 +469,7 @@ Full riven attribute model with all possible fields
 ## Sister ephemera
 
 - **Golang Struct**
-    
+
     ```go
     type SisterEphemera struct {
     	Id        string                           `json:"id"`
@@ -493,7 +486,6 @@ Full riven attribute model with all possible fields
     	Thumb string `json:"thumb"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -519,7 +511,7 @@ Full riven attribute model with all possible fields
 ## Sister quirk
 
 - **Golang Struct**
-    
+
     ```go
     type SisterQuirk struct {
     	Id      string                        `json:"id"`
@@ -536,7 +528,6 @@ Full riven attribute model with all possible fields
     }
     
     ```
-    
 
 **JSON Example**
 
@@ -559,7 +550,7 @@ Full riven attribute model with all possible fields
 ## Npc
 
 - **Golang Struct**
-    
+
     ```go
     type Npc struct {
     	Id      string                  `json:"id"`
@@ -573,7 +564,6 @@ Full riven attribute model with all possible fields
     	Thumb string `json:"thumb"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -597,7 +587,7 @@ Full riven attribute model with all possible fields
 ## Location
 
 - **Golang Struct**
-    
+
     ```go
     type Location struct {
     	Id       string                       `json:"id"`
@@ -616,7 +606,6 @@ Full riven attribute model with all possible fields
     	Thumb      string `json:"thumb"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -644,7 +633,7 @@ Full riven attribute model with all possible fields
 ## Mission
 
 - **Golang Struct**
-    
+
     ```go
     type Mission struct {
     	Id      string                      `json:"id"`
@@ -659,7 +648,6 @@ Full riven attribute model with all possible fields
     	Thumb string `json:"thumb,omitempty"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -683,11 +671,11 @@ Full riven attribute model with all possible fields
 ## Order
 
 Just an order, that’s it.
-Without specifying the owner, used in cases where you already know who the owner of the order is, such as in a user profile or your own profile.
+Without specifying the owner, used in cases where you already know who the owner of the order is, such as in a user
+profile or your own profile.
 
 - **Golang Struct**
-    
-    
+
     ```go
     type Order struct {
     	Id         string  `json:"id"`                   // Is the unique identifier of the order.
@@ -707,7 +695,6 @@ Without specifying the owner, used in cases where you already know who the owner
       Group      string  `json:"group"`                // User-defined group to which the order belongs
     }
     ```
-    
 
 **JSON Example**
 
@@ -740,15 +727,13 @@ Without specifying the owner, used in cases where you already know who the owner
 This is a typical order model found in most requests, including a record about an owner.
 
 - **Golang Struct**
-    
-    
+
     ```go
     type OrderWithUser struct {
     	[Order](https://www.notion.so/Data-Models-65e9ab01868c4dcca6ba499e68a04ac9?pvs=21)
     	User [UserShort](https://www.notion.so/Data-Models-65e9ab01868c4dcca6ba499e68a04ac9?pvs=21) `json:"user"` // Represents the user who created the order, with basic profile information.
     }
     ```
-    
 
 **JSON Example**
 
@@ -795,7 +780,7 @@ This is a typical order model found in most requests, including a record about a
 Represents an order that has been fully or partially closed.
 
 - **Golang Struct**
-    
+
     ```go
     type TxItem struct {
     	Id         string `json:"id,omitempty"`
@@ -818,7 +803,6 @@ Represents an order that has been fully or partially closed.
     	User      *UserShort `json:"user,omitempty"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -865,8 +849,7 @@ Depends on endpoint, may have or not have `User` struct inside.
 This is a shortened model of a user, which can be found in chats, messages, orders, bids, auctions, etc.
 
 - **Golang Struct**
-    
-    
+
     ```go
     type UserShort struct {
     	Id         string  `json:"id"`
@@ -882,7 +865,6 @@ This is a shortened model of a user, which can be found in chats, messages, orde
     	LastSeen string   `json:"lastSeen"` // Timestamp of the user's last online presence.
     }
     ```
-    
 
 **JSON Example**
 
@@ -912,8 +894,7 @@ This is a shortened model of a user, which can be found in chats, messages, orde
 Public user profile
 
 - **Golang Struct**
-    
-    
+
     ```go
     // User represents a public user profile with full information.
     type User struct {
@@ -944,7 +925,6 @@ Public user profile
     	BanMessage  string `json:"banMessage,omitempty"`  // Ban message or reason for the ban, if any.
     }
     ```
-    
 
 **JSON Example**
 
@@ -1009,8 +989,7 @@ Public user profile
 User profile, only available to the user itself.
 
 - **Golang Struct**
-    
-    
+
     ```go
     type UserPrivate struct {
     	Id           string    `json:"id"`
@@ -1057,7 +1036,6 @@ User profile, only available to the user itself.
     	CreatedAt string `json:"createdAt"` // Account creation date.
     }
     ```
-    
 
 **JSON Example**
 
@@ -1070,8 +1048,7 @@ SOON
 ## Activity 🚧
 
 - **Golang Struct**
-    
-    
+
     ```go
     type Activity struct {
     	Type      [ActivityType](https://www.notion.so/Data-Models-65e9ab01868c4dcca6ba499e68a04ac9?pvs=21) `json:"type" `               // Name of the activity (e.g., 'on mission', 'dojo').
@@ -1079,7 +1056,6 @@ SOON
     	StartedAt string       `json:"startedAt,omitempty"` // Timestamp of the activity start.
     }
     ```
-    
 
 **JSON Example**
 
@@ -1100,7 +1076,7 @@ Where:
 ## Achievement
 
 - **Golang Struct**
-    
+
     ```go
     type AchievementState struct {
     	Featured    bool   `json:"featured,omitempty"`    // If true, the achievement is featured
@@ -1127,7 +1103,6 @@ Where:
     	Thumb       string `json:"thumb,omitempty"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -1158,7 +1133,7 @@ Where:
 Mobile app main screen dashboard with featured items.
 
 - **Golang Struct**
-    
+
     ```go
     type DashboardShowcase struct {
     	I18N  map[string]*DashboardShowcaseI18NJson `json:"i18n,omitempty"`
@@ -1176,7 +1151,6 @@ Mobile app main screen dashboard with featured items.
     	BigCard    bool   `json:"bigCard"`
     }
     ```
-    
 
 **JSON Example**
 
@@ -1232,7 +1206,7 @@ Subscription tier, form Patreon \ Afdian \ Nitropay
 
 ## Language
 
-One of the languages supported by the backend. 
+One of the languages supported by the backend.
 Like, Frontend can have more languages, but they are only used to translate the user interface.
 
 `ko`, `ru`, `de`, `fr`, `pt`, `zh-hans`, `zh-hant`, `es`, `it`, `pl`, `uk`, `en`

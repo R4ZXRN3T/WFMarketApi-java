@@ -10,9 +10,9 @@ public class Utils {
 	 * Selects a localized value from a {@link Localization} container.
 	 * Falls back to English when the requested language is not available.
 	 *
-	 * @param i18n the localization container
+	 * @param i18n     the localization container
 	 * @param language preferred language
-	 * @param field field to retrieve
+	 * @param field    field to retrieve
 	 * @return localized string or null
 	 */
 	public static String getLocalizedValue(Localization i18n, Localization.Language language, Localization.LocalizedField field) {

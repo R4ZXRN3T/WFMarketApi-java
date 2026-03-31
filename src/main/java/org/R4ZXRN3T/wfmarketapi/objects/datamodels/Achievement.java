@@ -4,184 +4,240 @@ package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
  * Achievement metadata and state container.
  */
 public class Achievement extends DataModel {
-    /**
-     * Embedded state for an achievement (user-specific progress/flags).
-     */
-    public static class AchievementState {
-        private Boolean featured;
-        private Boolean hidden;
-        private Integer progress;
-        private String completedAt;
+	private String id;
+	private String slug;
+	private String type;
+	private Boolean secret;
+	private Integer reputationBonus;
+	private Integer goal;
+	private Localization i18n;
+	private AchievementState state;
 
-        /** No-arg constructor (fields set to null). */
-        public AchievementState() {
-            this.featured = null;
-            this.hidden = null;
-            this.progress = null;
-            this.completedAt = null;
-        }
+	/**
+	 * No-arg constructor.
+	 */
+	public Achievement() {
+		this.id = null;
+		this.slug = null;
+		this.type = null;
+		this.secret = null;
+		this.reputationBonus = null;
+		this.goal = null;
+		this.i18n = null;
+		this.state = null;
+	}
 
-        /** All-args constructor. */
-        public AchievementState(Boolean featured, Boolean hidden, Integer progress, String completedAt) {
-            this.featured = featured;
-            this.hidden = hidden;
-            this.progress = progress;
-            this.completedAt = completedAt;
-        }
+	/**
+	 * All-args constructor.
+	 */
+	public Achievement(String id, String slug, String type, Boolean secret, Integer reputationBonus, Integer goal, Localization i18n, AchievementState state) {
+		this.id = id;
+		this.slug = slug;
+		this.type = type;
+		this.secret = secret;
+		this.reputationBonus = reputationBonus;
+		this.goal = goal;
+		this.i18n = i18n;
+		this.state = state;
+	}
 
-        /** Returns whether this achievement is featured. */
-        public Boolean getFeatured() {
-            return featured;
-        }
+	/**
+	 * Returns achievement id.
+	 */
+	public String getId() {
+		return id;
+	}
 
-        /** Sets featured flag. */
-        public void setFeatured(Boolean featured) {
-            this.featured = featured;
-        }
+	/**
+	 * Sets achievement id.
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
-        /** Returns hidden flag. */
-        public Boolean getHidden() {
-            return hidden;
-        }
+	/**
+	 * Returns slug.
+	 */
+	public String getSlug() {
+		return slug;
+	}
 
-        /** Sets hidden flag. */
-        public void setHidden(Boolean hidden) {
-            this.hidden = hidden;
-        }
+	/**
+	 * Sets slug.
+	 */
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
 
-        /** Returns progress value. */
-        public Integer getProgress() {
-            return progress;
-        }
+	/**
+	 * Returns type.
+	 */
+	public String getType() {
+		return type;
+	}
 
-        /** Sets progress value. */
-        public void setProgress(Integer progress) {
-            this.progress = progress;
-        }
+	/**
+	 * Sets type.
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
 
-        /** Returns completed-at timestamp. */
-        public String getCompletedAt() {
-            return completedAt;
-        }
+	/**
+	 * Returns secret flag.
+	 */
+	public Boolean getSecret() {
+		return secret;
+	}
 
-        /** Sets completed-at timestamp. */
-        public void setCompletedAt(String completedAt) {
-            this.completedAt = completedAt;
-        }
-    }
+	/**
+	 * Sets secret flag.
+	 */
+	public void setSecret(Boolean secret) {
+		this.secret = secret;
+	}
 
-    private String id;
-    private String slug;
-    private String type;
-    private Boolean secret;
-    private Integer reputationBonus;
-    private Integer goal;
-    private Localization i18n;
-    private AchievementState state;
+	/**
+	 * Returns reputation bonus.
+	 */
+	public Integer getReputationBonus() {
+		return reputationBonus;
+	}
 
-    /** No-arg constructor. */
-    public Achievement() {
-        this.id = null;
-        this.slug = null;
-        this.type = null;
-        this.secret = null;
-        this.reputationBonus = null;
-        this.goal = null;
-        this.i18n = null;
-        this.state = null;
-    }
+	/**
+	 * Sets reputation bonus.
+	 */
+	public void setReputationBonus(Integer reputationBonus) {
+		this.reputationBonus = reputationBonus;
+	}
 
-    /** All-args constructor. */
-    public Achievement(String id, String slug, String type, Boolean secret, Integer reputationBonus, Integer goal, Localization i18n, AchievementState state) {
-        this.id = id;
-        this.slug = slug;
-        this.type = type;
-        this.secret = secret;
-        this.reputationBonus = reputationBonus;
-        this.goal = goal;
-        this.i18n = i18n;
-        this.state = state;
-    }
+	/**
+	 * Returns goal value.
+	 */
+	public Integer getGoal() {
+		return goal;
+	}
 
-    /** Returns achievement id. */
-    public String getId() {
-        return id;
-    }
+	/**
+	 * Sets goal value.
+	 */
+	public void setGoal(Integer goal) {
+		this.goal = goal;
+	}
 
-    /** Sets achievement id. */
-    public void setId(String id) {
-        this.id = id;
-    }
+	/**
+	 * Returns localization container.
+	 */
+	public Localization getI18n() {
+		return i18n;
+	}
 
-    /** Returns slug. */
-    public String getSlug() {
-        return slug;
-    }
+	/**
+	 * Sets localization container.
+	 */
+	public void setI18n(Localization i18n) {
+		this.i18n = i18n;
+	}
 
-    /** Sets slug. */
-    public void setSlug(String slug) {
-        this.slug = slug;
-    }
+	/**
+	 * Returns achievement state.
+	 */
+	public AchievementState getState() {
+		return state;
+	}
 
-    /** Returns type. */
-    public String getType() {
-        return type;
-    }
+	/**
+	 * Sets achievement state.
+	 */
+	public void setState(AchievementState state) {
+		this.state = state;
+	}
 
-    /** Sets type. */
-    public void setType(String type) {
-        this.type = type;
-    }
+	/**
+	 * Embedded state for an achievement (user-specific progress/flags).
+	 */
+	public static class AchievementState {
+		private Boolean featured;
+		private Boolean hidden;
+		private Integer progress;
+		private String completedAt;
 
-    /** Returns secret flag. */
-    public Boolean getSecret() {
-        return secret;
-    }
+		/**
+		 * No-arg constructor (fields set to null).
+		 */
+		public AchievementState() {
+			this.featured = null;
+			this.hidden = null;
+			this.progress = null;
+			this.completedAt = null;
+		}
 
-    /** Sets secret flag. */
-    public void setSecret(Boolean secret) {
-        this.secret = secret;
-    }
+		/**
+		 * All-args constructor.
+		 */
+		public AchievementState(Boolean featured, Boolean hidden, Integer progress, String completedAt) {
+			this.featured = featured;
+			this.hidden = hidden;
+			this.progress = progress;
+			this.completedAt = completedAt;
+		}
 
-    /** Returns reputation bonus. */
-    public Integer getReputationBonus() {
-        return reputationBonus;
-    }
+		/**
+		 * Returns whether this achievement is featured.
+		 */
+		public Boolean getFeatured() {
+			return featured;
+		}
 
-    /** Sets reputation bonus. */
-    public void setReputationBonus(Integer reputationBonus) {
-        this.reputationBonus = reputationBonus;
-    }
+		/**
+		 * Sets featured flag.
+		 */
+		public void setFeatured(Boolean featured) {
+			this.featured = featured;
+		}
 
-    /** Returns goal value. */
-    public Integer getGoal() {
-        return goal;
-    }
+		/**
+		 * Returns hidden flag.
+		 */
+		public Boolean getHidden() {
+			return hidden;
+		}
 
-    /** Sets goal value. */
-    public void setGoal(Integer goal) {
-        this.goal = goal;
-    }
+		/**
+		 * Sets hidden flag.
+		 */
+		public void setHidden(Boolean hidden) {
+			this.hidden = hidden;
+		}
 
-    /** Returns localization container. */
-    public Localization getI18n() {
-        return i18n;
-    }
+		/**
+		 * Returns progress value.
+		 */
+		public Integer getProgress() {
+			return progress;
+		}
 
-    /** Sets localization container. */
-    public void setI18n(Localization i18n) {
-        this.i18n = i18n;
-    }
+		/**
+		 * Sets progress value.
+		 */
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
 
-    /** Returns achievement state. */
-    public AchievementState getState() {
-        return state;
-    }
+		/**
+		 * Returns completed-at timestamp.
+		 */
+		public String getCompletedAt() {
+			return completedAt;
+		}
 
-    /** Sets achievement state. */
-    public void setState(AchievementState state) {
-        this.state = state;
-    }
+		/**
+		 * Sets completed-at timestamp.
+		 */
+		public void setCompletedAt(String completedAt) {
+			this.completedAt = completedAt;
+		}
+	}
 }
 
 

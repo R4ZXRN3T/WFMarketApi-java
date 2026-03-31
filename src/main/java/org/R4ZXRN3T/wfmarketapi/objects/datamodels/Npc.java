@@ -22,6 +22,7 @@ public class Npc extends DataModel {
 
 	/**
 	 * Returns NPC id.
+	 *
 	 * @return id or null
 	 */
 	public String getId() {
@@ -30,6 +31,7 @@ public class Npc extends DataModel {
 
 	/**
 	 * Sets NPC id.
+	 *
 	 * @param id id to set
 	 */
 	public void setId(String id) {
@@ -38,6 +40,7 @@ public class Npc extends DataModel {
 
 	/**
 	 * Returns NPC slug.
+	 *
 	 * @return slug or null
 	 */
 	public String getSlug() {
@@ -46,6 +49,7 @@ public class Npc extends DataModel {
 
 	/**
 	 * Sets NPC slug.
+	 *
 	 * @param slug slug to set
 	 */
 	public void setSlug(String slug) {
@@ -54,6 +58,7 @@ public class Npc extends DataModel {
 
 	/**
 	 * Returns game reference path for the NPC.
+	 *
 	 * @return gameRef or null
 	 */
 	public String getGameRef() {
@@ -62,6 +67,7 @@ public class Npc extends DataModel {
 
 	/**
 	 * Sets the game reference path for the NPC.
+	 *
 	 * @param gameRef game reference to set
 	 */
 	public void setGameRef(String gameRef) {
@@ -70,6 +76,7 @@ public class Npc extends DataModel {
 
 	/**
 	 * Returns localization data for the NPC.
+	 *
 	 * @return Localization object or null
 	 */
 	public Localization getI18n() {
@@ -78,6 +85,7 @@ public class Npc extends DataModel {
 
 	/**
 	 * Sets localization data for the NPC.
+	 *
 	 * @param i18n Localization object
 	 */
 	public void setI18n(Localization i18n) {
