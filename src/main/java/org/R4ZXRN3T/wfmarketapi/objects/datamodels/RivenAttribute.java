@@ -1,9 +1,11 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
 /**
  * Model for Riven attribute metadata.
  */
-public class RivenAttribute extends DataModel {
+public class RivenAttribute extends LocalizedDataModel implements Nameable, Iconable, Thumbable {
 	private String id;
 	private String slug;
 	private String gameRef;
@@ -15,7 +17,6 @@ public class RivenAttribute extends DataModel {
 	private String unit;
 	private Boolean positiveOnly;
 	private Boolean negativeOnly;
-	private Localization i18n;
 
 	/**
 	 * No-arg constructor.
@@ -210,16 +211,6 @@ public class RivenAttribute extends DataModel {
 	/**
 	 * Returns localization container.
 	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container.
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization accessors and localized field getters are provided by
+	// LocalizedDataModel and by capability interfaces (Nameable/Iconable/Thumbable).
 }
-
-

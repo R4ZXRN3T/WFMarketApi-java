@@ -1,7 +1,7 @@
 package org.R4ZXRN3T.wfmarketapi;
 
-import org.R4ZXRN3T.wfmarketapi.objects.datamodels.Localization;
-import org.R4ZXRN3T.wfmarketapi.objects.datamodels.Platform;
+import org.R4ZXRN3T.wfmarketapi.objects.datamodels.enums.Platform;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Localization;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,6 +15,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * Lightweight HTTP helper for calling the Warframe Market API.
+ *
+ * <p>Provides methods to perform GET requests against the API and parse the
+ * responses as JSON. Includes a simple in-process rate limiter to avoid
+ * exceeding the API's request rate.</p>
+ */
 public class API {
 	private static final String API_BASE_PATH = "https://api.warframe.market/v2/";
 	private static final String ASSET_BASE_PATH = "https://warframe.market/static/assets/";
@@ -24,14 +31,60 @@ public class API {
 	private static final Deque<Long> requestTimestamps = new ArrayDeque<>();
 	private static LocalDateTime lastApiCall;
 
+	/**
+	 * Convenience wrapper that calls {@link #getJsonResponse(Localization.Language, Platform, String, boolean)}
+	 * using the default language {@link Localization.Language#ENGLISH} and platform
+	 * {@link Platform#PC} and with {@code errorOut=true}.
+	 *
+	 * @param endpoint the API endpoint path (appended to the API base path)
+	 * @return a {@link JSONObject} parsed from the API response body, or
+	 * {@code null} when {@code errorOut} is false and an error occurred
+	 * @see #getJsonResponse(Localization.Language, Platform, String, boolean)
+	 */
 	public static JSONObject getJsonResponse(String endpoint) {
 		return getJsonResponse(endpoint, true);
 	}
 
+	/**
+	 * Convenience wrapper that calls {@link #getJsonResponse(Localization.Language, Platform, String, boolean)}
+	 * using the default language {@link Localization.Language#ENGLISH} and platform
+	 * {@link Platform#PC}.
+	 *
+	 * @param endpoint the API endpoint path (appended to the API base path)
+	 * @param errorOut when {@code true} throw a {@link RuntimeException} on
+	 *                 non-2xx responses or JSON parsing errors; when {@code false}
+	 *                 the method will return {@code null} and print errors to
+	 *                 standard output instead
+	 * @return a {@link JSONObject} parsed from the API response body, or
+	 * {@code null} when {@code errorOut} is false and an error occurred
+	 * @see #getJsonResponse(Localization.Language, Platform, String, boolean)
+	 */
 	public static JSONObject getJsonResponse(String endpoint, boolean errorOut) {
 		return getJsonResponse(Localization.Language.ENGLISH, Platform.PC, endpoint, errorOut);
 	}
 
+	/**
+	 * Perform an HTTP GET request against the Warframe Market API and return
+	 * the parsed JSON response.
+	 *
+	 * <p>This method enforces an in-process rate limit (see
+	 * {@link #ensureRateLimit()}) before issuing the request. The endpoint
+	 * parameter is appended to the configured API base path. Optional
+	 * request headers for {@code Language} and {@code Platform} are set when
+	 * the corresponding parameters are non-null.</p>
+	 *
+	 * @param language optional language header to request localized results
+	 * @param platform optional platform header, may be {@code null}
+	 * @param endpoint the API endpoint path (for example {@code "items"} or
+	 *                 {@code "item/<slug>"}). This value is appended to the
+	 *                 API base path.
+	 * @param errorOut when {@code true} throw a {@link RuntimeException} on
+	 *                 non-2xx responses or JSON parsing errors; when
+	 *                 {@code false} print errors and return {@code null}
+	 * @return the parsed {@link JSONObject} from the response body, or
+	 * {@code null} when a non-fatal error occurs and {@code errorOut} is
+	 * {@code false}
+	 */
 	public static JSONObject getJsonResponse(Localization.Language language, Platform platform, String endpoint, boolean errorOut) {
 		// Enforce rate limit before making the API call
 		ensureRateLimit();
@@ -96,8 +149,12 @@ public class API {
 	}
 
 	/**
-	 * Ensures no more than MAX_REQUESTS are made within WINDOW_MILLIS.
-	 * This method blocks the caller if necessary until a slot becomes available.
+	 * Ensures no more than {@value #MAX_REQUESTS} are made within
+	 * {@value #WINDOW_MILLIS} milliseconds due to API limits by maintaining a deque of recent
+	 * request timestamps. This method will block the calling thread until a
+	 * slot becomes available. It is intentionally simple and is intended for
+	 * in-process rate limiting only; for distributed or highly concurrent
+	 * applications prefer a dedicated rate-limiter implementation.
 	 */
 	private static void ensureRateLimit() {
 		while (true) {

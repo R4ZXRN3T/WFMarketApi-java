@@ -1,5 +1,6 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Localization;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,7 +15,7 @@ class ItemLocalizationConvenienceTest {
 		localization.setLanguageData(Localization.Language.ENGLISH, en);
 
 		ItemShort itemShort = new ItemShort();
-		itemShort.setLocalization(localization);
+		itemShort.setI18n(localization);
 
 		assertEquals("Secura Dual Cestra", itemShort.getName());
 	}
@@ -28,10 +29,9 @@ class ItemLocalizationConvenienceTest {
 		localization.setLanguageData(Localization.Language.ENGLISH, en);
 
 		Item item = new Item();
-		item.setLocalization(localization);
+		item.setI18n(localization);
 
 		assertEquals("Abating Link", item.getName(Localization.Language.ENGLISH));
 		assertEquals("https://warframe.fandom.com/wiki/Abating_Link", item.getWikiLink(Localization.Language.ENGLISH));
 	}
 }
-

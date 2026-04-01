@@ -1,13 +1,13 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
-import static org.R4ZXRN3T.wfmarketapi.Utils.getLocalizedValue;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
 
 /**
  * Full item payload model.
  * Item adds full-payload specific fields on top of ItemShort and also exposes
  * convenience localization getters directly for discoverability.
  */
-public class Item extends ItemShort {
+public class Item extends ItemShort implements Nameable, Describable, WikiLinkable, Iconable, Thumbable, SubIconable {
 	private Boolean setRoot;
 	private String[] setParts;
 	private Integer quantityInSet;
@@ -278,21 +278,7 @@ public class Item extends ItemShort {
 		return super.getName(language);
 	}
 
-	public String getDescription() {
-		return getDescription(Localization.Language.ENGLISH);
-	}
-
-	public String getDescription(Localization.Language language) {
-		return getLocalizedValue(getI18n(), language, Localization.LocalizedField.DESCRIPTION);
-	}
-
-	public String getWikiLink() {
-		return getWikiLink(Localization.Language.ENGLISH);
-	}
-
-	public String getWikiLink(Localization.Language language) {
-		return getLocalizedValue(getI18n(), language, Localization.LocalizedField.WIKI_LINK);
-	}
+	// Description and WikiLink defaults are provided by Describable and WikiLinkable
 
 	@Override
 	public String getIcon() {

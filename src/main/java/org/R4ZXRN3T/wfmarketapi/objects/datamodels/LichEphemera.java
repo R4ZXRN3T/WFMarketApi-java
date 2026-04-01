@@ -1,12 +1,19 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
-public class LichEphemera extends DataModel {
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
+/**
+ * Ephemera metadata for Lich weapons (visual or effect assets attached to a Lich).
+ *
+ * <p>Includes fields such as animation and element and provides localization
+ * support via {@link LocalizedDataModel}.</p>
+ */
+public class LichEphemera extends LocalizedDataModel implements Nameable, Iconable, Thumbable {
 	private String id;
 	private String slug;
 	private String gameRef;
 	private String animation;
 	private String element;
-	private Localization i18n;
 
 	public LichEphemera() {
 		this.id = null;
@@ -96,19 +103,5 @@ public class LichEphemera extends DataModel {
 		this.element = element;
 	}
 
-	/**
-	 * Returns localization container.
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container.
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 }
-
-

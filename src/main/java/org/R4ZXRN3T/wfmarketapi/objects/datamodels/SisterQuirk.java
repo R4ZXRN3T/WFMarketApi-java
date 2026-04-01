@@ -1,13 +1,17 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Describable;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Localization;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.LocalizedDataModel;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Nameable;
+
 /**
  * Sister quirk metadata model.
  */
-public class SisterQuirk extends DataModel {
+public class SisterQuirk extends LocalizedDataModel implements Nameable, Describable {
 	private String id;
 	private String slug;
 	private String group;
-	private Localization i18n;
 
 	public SisterQuirk() {
 		this.id = null;
@@ -65,19 +69,7 @@ public class SisterQuirk extends DataModel {
 		this.group = group;
 	}
 
-	/**
-	 * Returns localization container.
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container.
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 }
 
 

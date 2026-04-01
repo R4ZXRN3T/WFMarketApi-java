@@ -1,12 +1,19 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
-public class SisterEphemera extends DataModel {
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
+/**
+ * Ephemera metadata for Sisters of Parvos items (visual/effect metadata).
+ *
+ * <p>Includes animation and element fields and supports localization via the
+ * {@link LocalizedDataModel} base class.</p>
+ */
+public class SisterEphemera extends LocalizedDataModel implements Nameable, Iconable, Thumbable {
 	private String id;
 	private String slug;
 	private String gameRef;
 	private String animation;
 	private String element;
-	private Localization i18n;
 
 	public SisterEphemera() {
 		this.id = null;
@@ -96,19 +103,5 @@ public class SisterEphemera extends DataModel {
 		this.element = element;
 	}
 
-	/**
-	 * Returns localization container.
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container.
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 }
-
-

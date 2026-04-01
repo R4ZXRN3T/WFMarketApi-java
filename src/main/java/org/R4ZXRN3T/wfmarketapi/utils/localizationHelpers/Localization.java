@@ -1,4 +1,4 @@
-package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
+package org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers;
 
 import java.util.HashMap;
 
@@ -28,6 +28,15 @@ public class Localization {
 		switch (field) {
 			case NAME:
 				localeData.setName(value);
+				break;
+			case TITLE:
+				localeData.setTitle(value);
+				break;
+			case NODE_NAME:
+				localeData.setNodeName(value);
+				break;
+			case SYSTEM_NAME:
+				localeData.setSystemName(value);
 				break;
 			case DESCRIPTION:
 				localeData.setDescription(value);
@@ -119,6 +128,9 @@ public class Localization {
 		DESCRIPTION,
 		ICON,
 		NAME,
+		TITLE,
+		NODE_NAME,
+		SYSTEM_NAME,
 		THUMB,
 		WIKI_LINK,
 		SUB_ICON
@@ -126,6 +138,9 @@ public class Localization {
 
 	public static class LocaleData {
 		private String name;
+		private String title;
+		private String systemName;
+		private String nodeName;
 		private String description;
 		private String wikiLink;
 		private String icon;
@@ -151,6 +166,30 @@ public class Localization {
 		 */
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getTitle() {
+			return title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getNodeName() {
+			return nodeName;
+		}
+
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
+		}
+
+		public String getSystemName() {
+			return systemName;
+		}
+
+		public void setSystemName(String systemName) {
+			this.systemName = systemName;
 		}
 
 		/**

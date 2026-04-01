@@ -1,16 +1,17 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
 /**
  * Location data model.
  */
-public class Location extends DataModel {
+public class Location extends LocalizedDataModel implements NodeNameable, SystemNameable, Iconable, Thumbable {
 	private String id;
 	private String slug;
 	private String gameRef;
 	private String faction;
 	private Integer minLevel;
 	private Integer maxLevel;
-	private Localization i18n;
 
 	/**
 	 * No-arg constructor initializing fields to null.
@@ -146,21 +147,5 @@ public class Location extends DataModel {
 		this.maxLevel = maxLevel;
 	}
 
-	/**
-	 * Returns localization container for this location.
-	 *
-	 * @return Localization or null
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container for this location.
-	 *
-	 * @param i18n Localization to set
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 }

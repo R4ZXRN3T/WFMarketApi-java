@@ -1,16 +1,17 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
-import static org.R4ZXRN3T.wfmarketapi.Utils.getLocalizedValue;
+// Removed unused static import; localization helpers are provided via capability interfaces
+
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
 
 /**
  * Short item payload model with common fields and localization convenience methods.
  */
-public class ItemShort extends DataModel {
+public class ItemShort extends LocalizedDataModel implements Nameable, Iconable, Thumbable, SubIconable {
 	private String id;
 	private String slug;
 	private String gameRef;
 	private String[] tags;
-	private Localization i18n;
 	private String[] subtypes;
 	private Integer maxRank;
 	private Integer maxCharges;
@@ -133,117 +134,8 @@ public class ItemShort extends DataModel {
 		this.tags = tags;
 	}
 
-	/**
-	 * Returns the localization container (i18n) for this item.
-	 *
-	 * @return Localization object or null
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets the localization container for this item.
-	 *
-	 * @param i18n Localization object
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
-
-	/**
-	 * Alias for getI18n().
-	 *
-	 * @return Localization object or null
-	 */
-	public Localization getLocalization() {
-		return i18n;
-	}
-
-	/**
-	 * Alias for setI18n(Localization).
-	 *
-	 * @param localization Localization object
-	 */
-	public void setLocalization(Localization localization) {
-		this.i18n = localization;
-	}
-
-	/**
-	 * Convenience getter for name in default language (English).
-	 *
-	 * @return localized name or null
-	 */
-	public String getName() {
-		return getName(Localization.Language.ENGLISH);
-	}
-
-	/**
-	 * Returns localized name for the given language.
-	 *
-	 * @param language target language
-	 * @return localized name or null
-	 */
-	public String getName(Localization.Language language) {
-		return getLocalizedValue(i18n, language, Localization.LocalizedField.NAME);
-	}
-
-	/**
-	 * Convenience getter for icon in default language (English).
-	 *
-	 * @return localized icon path or null
-	 */
-	public String getIcon() {
-		return getIcon(Localization.Language.ENGLISH);
-	}
-
-	/**
-	 * Returns localized icon for the given language.
-	 *
-	 * @param language target language
-	 * @return localized icon path or null
-	 */
-	public String getIcon(Localization.Language language) {
-		return getLocalizedValue(i18n, language, Localization.LocalizedField.ICON);
-	}
-
-	/**
-	 * Convenience getter for thumbnail in default language (English).
-	 *
-	 * @return localized thumbnail path or null
-	 */
-	public String getThumb() {
-		return getThumb(Localization.Language.ENGLISH);
-	}
-
-	/**
-	 * Returns localized thumbnail for the given language.
-	 *
-	 * @param language target language
-	 * @return localized thumbnail path or null
-	 */
-	public String getThumb(Localization.Language language) {
-		return getLocalizedValue(i18n, language, Localization.LocalizedField.THUMB);
-	}
-
-	/**
-	 * Convenience getter for sub icon in default language (English).
-	 *
-	 * @return localized sub icon or null
-	 */
-	public String getSubIcon() {
-		return getSubIcon(Localization.Language.ENGLISH);
-	}
-
-	/**
-	 * Returns localized sub icon for the given language.
-	 *
-	 * @param language target language
-	 * @return localized sub icon path or null
-	 */
-	public String getSubIcon(Localization.Language language) {
-		return getLocalizedValue(i18n, language, Localization.LocalizedField.SUB_ICON);
-	}
+	// Localization accessors and localized field getters are provided by
+	// LocalizedDataModel and the capability interfaces this class implements.
 
 	/**
 	 * Returns the maximum rank available for the item (if applicable).

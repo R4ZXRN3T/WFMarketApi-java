@@ -1,4 +1,4 @@
-package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
+package org.R4ZXRN3T.wfmarketapi.objects.datamodels.enums;
 
 /**
  * Subscription tier for users.

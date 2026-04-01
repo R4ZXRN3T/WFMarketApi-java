@@ -1,10 +1,17 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
-public class Npc extends DataModel {
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
+/**
+ * Non-player character (NPC) metadata entry.
+ *
+ * <p>Contains identifiers and localized display strings for NPCs returned in
+ * manifests and other API responses.</p>
+ */
+public class Npc extends LocalizedDataModel implements Nameable, Iconable, Thumbable {
 	private String id;
 	private String slug;
 	private String gameRef;
-	private Localization i18n;
 
 	public Npc() {
 		this.id = null;
@@ -74,23 +81,5 @@ public class Npc extends DataModel {
 		this.gameRef = gameRef;
 	}
 
-	/**
-	 * Returns localization data for the NPC.
-	 *
-	 * @return Localization object or null
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization data for the NPC.
-	 *
-	 * @param i18n Localization object
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 }
-
-

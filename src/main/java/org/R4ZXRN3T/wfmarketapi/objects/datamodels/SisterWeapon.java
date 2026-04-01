@@ -1,14 +1,15 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
 /**
  * Model representing a Sisters of Parvos weapon metadata entry.
  */
-public class SisterWeapon extends DataModel {
+public class SisterWeapon extends LocalizedDataModel implements Nameable, WikiLinkable, Iconable, Thumbable {
 	private String id;
 	private String slug;
 	private String gameRef;
 	private Integer reqMasteryRank;
-	private Localization i18n;
 
 	public SisterWeapon() {
 		this.id = null;
@@ -82,19 +83,7 @@ public class SisterWeapon extends DataModel {
 		this.reqMasteryRank = reqMasteryRank;
 	}
 
-	/**
-	 * Returns localization container.
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container.
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 }
 
 

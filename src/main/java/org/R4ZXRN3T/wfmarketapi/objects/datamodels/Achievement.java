@@ -1,16 +1,17 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
 /**
  * Achievement metadata and state container.
  */
-public class Achievement extends DataModel {
+public class Achievement extends LocalizedDataModel implements Nameable, Describable, Iconable, Thumbable {
 	private String id;
 	private String slug;
 	private String type;
 	private Boolean secret;
 	private Integer reputationBonus;
 	private Integer goal;
-	private Localization i18n;
 	private AchievementState state;
 
 	/**
@@ -125,19 +126,7 @@ public class Achievement extends DataModel {
 		this.goal = goal;
 	}
 
-	/**
-	 * Returns localization container.
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container.
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 
 	/**
 	 * Returns achievement state.
@@ -239,5 +228,3 @@ public class Achievement extends DataModel {
 		}
 	}
 }
-
-

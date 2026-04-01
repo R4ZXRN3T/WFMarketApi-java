@@ -1,14 +1,15 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
 /**
  * Model representing a Lich weapon metadata entry.
  */
-public class LichWeapon extends DataModel {
+public class LichWeapon extends LocalizedDataModel implements Nameable, Iconable, Thumbable, WikiLinkable {
 	private String id;
 	private String slug;
 	private String gameRef;
 	private Integer reqMasteryRank;
-	private Localization i18n;
 
 	public LichWeapon() {
 		this.id = null;
@@ -103,18 +104,8 @@ public class LichWeapon extends DataModel {
 	 *
 	 * @return Localization or null
 	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container.
-	 *
-	 * @param i18n Localization to set
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization accessors and localized field getters are provided by
+	// LocalizedDataModel and the capability interfaces this class implements.
 }
 
 

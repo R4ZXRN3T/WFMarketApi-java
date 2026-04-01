@@ -1,9 +1,11 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.*;
+
 /**
  * Riven weapon model.
  */
-public class Riven extends DataModel {
+public class RivenWeapon extends LocalizedDataModel implements Nameable, Iconable, WikiLinkable, Thumbable {
 	private String id;
 	private String slug;
 	private String gameRef;
@@ -11,12 +13,11 @@ public class Riven extends DataModel {
 	private String rivenType;
 	private Float disposition;
 	private Integer reqMasteryRank;
-	private Localization i18n;
 
 	/**
 	 * No-arg constructor (fields initialized to null).
 	 */
-	public Riven() {
+	public RivenWeapon() {
 		this.id = null;
 		this.slug = null;
 		this.gameRef = null;
@@ -30,7 +31,7 @@ public class Riven extends DataModel {
 	/**
 	 * All-args constructor.
 	 */
-	public Riven(String id, String slug, String gameRef, String group, String rivenType, Float disposition, Integer reqMasteryRank, Localization i18n) {
+	public RivenWeapon(String id, String slug, String gameRef, String group, String rivenType, Float disposition, Integer reqMasteryRank, Localization i18n) {
 		this.id = id;
 		this.slug = slug;
 		this.gameRef = gameRef;
@@ -172,18 +173,6 @@ public class Riven extends DataModel {
 	 *
 	 * @return Localization or null
 	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container for the riven.
-	 *
-	 * @param i18n Localization to set
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization accessors and localized field getters are provided by
+	// LocalizedDataModel and the capability interfaces this class implements.
 }
-
-

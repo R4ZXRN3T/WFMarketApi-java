@@ -1,10 +1,14 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Describable;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Localization;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.LocalizedDataModel;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Titleable;
+
 /**
  * Dashboard showcase model used by mobile app main screen to show featured items.
  */
-public class DashboardShowcase extends DataModel {
-	private Localization i18n;
+public class DashboardShowcase extends LocalizedDataModel implements Titleable, Describable {
 	private DashboardShowcaseItem[] items;
 
 	/**
@@ -23,23 +27,7 @@ public class DashboardShowcase extends DataModel {
 		this.items = items;
 	}
 
-	/**
-	 * Returns localization container for the showcase.
-	 *
-	 * @return Localization or null
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container for the showcase.
-	 *
-	 * @param i18n Localization to set
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 
 	/**
 	 * Returns items in the showcase.

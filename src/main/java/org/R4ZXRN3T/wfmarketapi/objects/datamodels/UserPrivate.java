@@ -1,5 +1,16 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.objects.datamodels.enums.Role;
+import org.R4ZXRN3T.wfmarketapi.objects.datamodels.enums.Tier;
+
+/**
+ * Private user profile model containing fields only available to authenticated
+ * callers or the user themselves.
+ *
+ * <p>Extends {@link User} with private fields such as role, credits and
+ * verification status. Fields may be {@code null} when not present in the
+ * API response.</p>
+ */
 public class UserPrivate extends User {
 	private Role role;
 	private String aboutRaw;
@@ -282,5 +293,3 @@ public class UserPrivate extends User {
 		this.createdAt = createdAt;
 	}
 }
-
-

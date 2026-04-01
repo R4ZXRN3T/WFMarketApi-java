@@ -1,5 +1,11 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+/**
+ * Order model that includes the short user payload of the order creator.
+ *
+ * <p>Used by endpoints that return an order along with basic information
+ * about the user who posted it.</p>
+ */
 public class OrderWithUser extends Order {
 	private UserShort user;
 
@@ -31,5 +37,3 @@ public class OrderWithUser extends Order {
 		this.user = user;
 	}
 }
-
-

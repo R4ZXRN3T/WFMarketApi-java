@@ -1,10 +1,21 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
-public class LichQuirk extends DataModel {
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Describable;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Localization;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.LocalizedDataModel;
+import org.R4ZXRN3T.wfmarketapi.utils.localizationHelpers.Nameable;
+
+/**
+ * Definition of a Lich quirk (special modifiers applied to a Lich-generated
+ * weapon or enemy).
+ *
+ * <p>Quirks include an optional group string and localized name/description
+ * via the localization container.</p>
+ */
+public class LichQuirk extends LocalizedDataModel implements Nameable, Describable {
 	private String id;
 	private String slug;
 	private String group;
-	private Localization i18n;
 
 	public LichQuirk() {
 		this.id = null;
@@ -74,23 +85,5 @@ public class LichQuirk extends DataModel {
 		this.group = group;
 	}
 
-	/**
-	 * Returns localization container.
-	 *
-	 * @return Localization or null
-	 */
-	public Localization getI18n() {
-		return i18n;
-	}
-
-	/**
-	 * Sets localization container.
-	 *
-	 * @param i18n Localization to set
-	 */
-	public void setI18n(Localization i18n) {
-		this.i18n = i18n;
-	}
+	// Localization getters/setters are provided by LocalizedDataModel
 }
-
-

@@ -1,5 +1,14 @@
 package org.R4ZXRN3T.wfmarketapi.objects.datamodels;
 
+import org.R4ZXRN3T.wfmarketapi.objects.datamodels.enums.ActivityType;
+
+/**
+ * Represents a user's current activity or status details returned by the API.
+ *
+ * <p>Stored in user payloads to convey what the user is currently doing or
+ * to provide additional context (for example a mission or in-game action).
+ * Fields may be {@code null} when not provided by the API.</p>
+ */
 public class Activity extends DataModel {
 	private ActivityType type;
 	private String details;
@@ -71,5 +80,3 @@ public class Activity extends DataModel {
 		this.startedAt = startedAt;
 	}
 }
-
-
